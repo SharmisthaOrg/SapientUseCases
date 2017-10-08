@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
-public class SortHashMapWithvaluesUsingJava8 {
+public class SortHashMapWithValuesUsingJava8 {
 
 	public static void main(String[] args) {
 		HashMap<Integer,String> unsortedMap=new HashMap<>();
@@ -19,7 +19,7 @@ public class SortHashMapWithvaluesUsingJava8 {
 			    .sorted(Entry.comparingByValue())
 			    .collect(Collectors.toMap(Entry::getKey, Entry::getValue,
 			                              (e1, e2) -> e1, LinkedHashMap::new));
-		System.out.println(sortedMap);
+		//System.out.println(sortedMap);
 		
 		unsortedMap.entrySet().stream()
         .sorted((k1, k2) -> -k1.getValue().compareTo(k2.getValue()))
