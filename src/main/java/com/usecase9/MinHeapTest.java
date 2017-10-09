@@ -1,12 +1,14 @@
 package com.usecase9;
 
+import java.util.Arrays;
+
 public class MinHeapTest {
 
 	public static void main(String[] args) {
-		Integer[] arr= {2,7,9,3,6,1,9};
+		int[] arr= {3,2,1,7,8,4,10,16,12};
 		MinHeap mh=new MinHeap(arr.length);
 		mh.createHeap(arr);
-
+		System.out.println(Arrays.toString(Arrays.copyOfRange(mh.minH, 1, mh.minH.length)));
 	}
 
 }
@@ -19,13 +21,13 @@ class MinHeap{
 		this.position =0;
 		this.minH = new int[size+1];
 	}
-	public void createHeap(Integer[] arr) {
+	public void createHeap(int[] arr) {
 		if(arr.length>0) {
 			for(int i=0;i<arr.length;i++) {
 				insert(arr[i]);
 			}
 		}
-		
+
 	}
 	private void insert(Integer data) {
 		if(position==0) {
@@ -34,21 +36,22 @@ class MinHeap{
 		}
 		else {
 			minH[position++]=data;
-			bubbleUp(minH);
+			bubbleUp();
 		}
-		
+
 	}
-	private void bubbleUp(int[] minH2) {
+	private void bubbleUp() {
 		int latestPosInserted=position-1;
-		//??
-		while(latestPosInserted>0 ) {
-			int rootPos = latestPosInserted/2;
-			if(minH[rootPos] < minH[latestPosInserted]) {
-				swap(rootPos,latestPosInserted);
-				latestPosInserted = rootPos;
-			}
+		int rootPos=latestPosInserted/2;
+		while(rootPos>0 ) {
+
+			if(minH[rootPos] <= minH[latestPosInserted])break;
+			
+			swap(rootPos,latestPosInserted);
+			latestPosInserted = rootPos;
+			rootPos = latestPosInserted/2;
 		}
-		
+
 	}
 	private void swap(int rootPos, int latestPosInserted) {
 		if(rootPos != latestPosInserted) {
@@ -56,7 +59,7 @@ class MinHeap{
 			minH[rootPos] = minH[latestPosInserted];
 			minH[latestPosInserted] = temp;
 		}
-		
+
 	}
-	
+
 }
