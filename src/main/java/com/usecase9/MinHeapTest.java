@@ -1,18 +1,20 @@
 package com.usecase9;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class MinHeapTest {
 
 	public static void main(String[] args) {
-		int[] arr= {3,2,1,7,8,4,10,16,12};
+		Integer[] arr= {3,2,1,7,8,4,10,16,12};
 		int k=5;
 		MinHeap mh=new MinHeap(arr.length);
 		mh.createHeap(arr);
 		System.out.println(Arrays.toString(Arrays.copyOfRange(mh.minH, 1, mh.minH.length)));
-		for(int i=0;i<k ;i++) {
-		System.out.println(mh.extractmin());
+		for(int i=0;i<=k ;i++) {
+			System.out.println(mh.extractmin());
 		}
+		Arrays.asList(arr).stream().sorted().limit(k+1).skip(k).forEach(System.out::println);;
 	}
 
 }
@@ -52,7 +54,7 @@ class MinHeap{
 		}
 	}
 
-	public void createHeap(int[] arr) {
+	public void createHeap(Integer[] arr) {
 		if(arr.length>0) {
 			for(int i=0;i<arr.length;i++) {
 				insert(arr[i]);
