@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
 
-import com.sun.xml.internal.ws.api.config.management.Reconfigurable;
-
 public class MergerSortUsingForkJoin {
 
 	public static void main(String[] args) {
