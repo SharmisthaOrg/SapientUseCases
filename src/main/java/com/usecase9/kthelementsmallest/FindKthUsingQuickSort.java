@@ -1,4 +1,4 @@
-package com.usecase9;
+package com.usecase9.kthelementsmallest;
 
 public class FindKthUsingQuickSort {
 

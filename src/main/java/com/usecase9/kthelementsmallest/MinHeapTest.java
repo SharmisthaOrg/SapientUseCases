@@ -1,4 +1,4 @@
-package com.usecase9;
+package com.usecase9.kthelementsmallest;
 
 import java.util.Arrays;
 import java.util.List;
