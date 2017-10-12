@@ -1,4 +1,4 @@
-package com.usecase8;
+package com.usecase8.sorthashmap;
 
 import java.util.ArrayList;
 import java.util.Collections;

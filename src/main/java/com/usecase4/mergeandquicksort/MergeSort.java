@@ -9,7 +9,7 @@ public class MergeSort {
 		System.out.println("Belore Sort:"+Arrays.deepToString(arr));
 		arr=mergesort(arr);
 		System.out.println("After Sort:"+Arrays.deepToString(arr));
-
+		Arrays.parallelSort(arr);
 
 	}
 
