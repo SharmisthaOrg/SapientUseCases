@@ -51,7 +51,9 @@ public class CustomLinkedBlockignQueue<E> {
 		last = last.next = n;	
 	}
 	public E take() throws InterruptedException {
-		takeLock.lockInterruptibly();
+		//takeLock.lockInterruptibly();
+		takeLock.lock();
+		
 		try {
 			if(count.get() ==0) {
 				takeWhenNotEmpty.await();
