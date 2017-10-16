@@ -15,7 +15,7 @@ public class MergerSortUsingForkJoin {
 	}
 
 	private static void parallelMergeSort(Integer[] i) {
-		ForkJoinPool k=ForkJoinPool.commonPool();
+		//ForkJoinPool
 		
 	}
 
@@ -24,7 +24,7 @@ class ParalleMergerSort extends RecursiveAction{
 
 	@Override
 	protected void compute() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	
