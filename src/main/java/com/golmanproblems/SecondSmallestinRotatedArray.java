@@ -3,7 +3,7 @@ package com.golmanproblems;
 public class SecondSmallestinRotatedArray {
 
 	public static void main(String[] args) {
-		int arr[] =  {2,3,4,5,6,7,8,9,1};
+		int arr[] =  {5,6,1,2,3,4};
 		System.out.println(secondSmallestinRotatedArray(arr,0,arr.length-1));
 
 	}
@@ -30,11 +30,11 @@ public class SecondSmallestinRotatedArray {
 		for(int i=1;i<arr.length;i++) {
 			if(arr[i-1]>arr[i]) {
 				if(i+1==arr.length)return arr[0]+"";
-				return arr[i]+"";
+				return arr[i+1]+"";
 			}
 		}
-		//return arr[0]+"";
-		return "invalid";
+		return arr[1]+"";
+		//return "invalid";
 	}
 
 }
