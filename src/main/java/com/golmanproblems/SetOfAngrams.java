@@ -8,7 +8,7 @@ import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
 public class SetOfAngrams {
 
 	public static void main(String[] args) {
-		String[] an = {"cat","act", "dog", "tac", "god", "act","nhy","odg","yhn"};
+		String[] an = "cat dog tac sat tas god dog".split("\\s");
 		System.out.println(findanagrams(an));
 
 	}
@@ -16,7 +16,6 @@ public class SetOfAngrams {
 		int position=0;
 		while(position<an.length-1) {
 			int m=position++;
-			//position++;
 			for(int i=m+1;i<an.length;i++) {
 				if(isAnagram(an[m], an[i])) {
 					swap(an,position++,i);
