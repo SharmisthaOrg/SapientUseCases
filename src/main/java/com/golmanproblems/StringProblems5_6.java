@@ -5,7 +5,7 @@ import java.util.LinkedHashSet;
 public class StringProblems5_6 {
 
 	public static void main(String[] args) {
-		String s="0oaddhahggiiop";
+		String s="aabbhabo";
 		System.out.println(removeduplicates(s));
 		System.out.println(finduniquecharacter(s));
 		System.out.println(largestuniquecharacter(s));
