@@ -1,5 +1,5 @@
 package com.golmanproblems;
-
+//char to ascii
 public class MyATOI {
 
 	public static void main(String[] args) {

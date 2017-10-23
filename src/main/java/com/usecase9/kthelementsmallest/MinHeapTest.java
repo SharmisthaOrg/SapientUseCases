@@ -76,7 +76,7 @@ class MinHeap{
 	private void bubbleUp() {
 		int latestPosInserted=position-1;
 		int rootPos=latestPosInserted/2;
-		while(rootPos>0 ) {
+		while(rootPos>0) {
 
 			if(minH[rootPos] <= minH[latestPosInserted])break;
 
