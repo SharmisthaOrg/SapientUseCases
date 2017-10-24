@@ -7,37 +7,38 @@ import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
 
 public class SetOfAngrams {
 
-	public static void main(String[] args) {
-		String[] an = "cat dog tac sat tas god dog".split("\\s");
-		System.out.println(findanagrams(an));
+	static String input = "cat dog tac sat tas god dog";
+	  
+	  static void setOfAnagrams(){
+	    String[] words=input.split("\\W");
+	    int pos=0;
+	    while(pos<words.length-1){
+	      int m=pos++;
+	      for(int i=m+1;i<words.length;i++){
+	        if(isAnagram(words[i].toCharArray(),words[m].toCharArray())){
+	          swap(words,i,pos++);
+	        }        
+	      }
+	    }
+	    System.out.println(Arrays.deepToString(words));
+	  }
+	 
+	  static boolean isAnagram(char[] c,char[] c1){
 
+	   
+	   Arrays.sort(c);
+	   Arrays.sort(c1);
+	   return new String(c).equals(new String(c1));
+	 }
+	static void swap(String[] words,int i,int j){  
+	  String temp=words[i];
+	  words[i] = words[j];
+	  words[j] = temp;
 	}
-	private static List<String> findanagrams(String[] an) {
-		int position=0;
-		while(position<an.length-1) {
-			int m=position++;
-			for(int i=m+1;i<an.length;i++) {
-				if(isAnagram(an[m], an[i])) {
-					swap(an,position++,i);
-				}
-			}
-			System.out.println(Arrays.asList(an));
-			System.out.println(position);
-		}
-		return Arrays.asList(an);
-	}
-	private static void swap(String[] an, int position, int i) {
-		if(position!=i) {
-			String temp=an[position];
-			an[position]=an[i];
-			an[i]=temp;
-		}
-	}
-	private static boolean isAnagram(String s,String s1) {
-		char[] c=s.toCharArray();
-		char[] c1=s1.toCharArray();
-		Arrays.sort(c);Arrays.sort(c1);
-		return new String(c).equals(new String(c1));
-	}
+	  public static void main(String[] args) {
+	    
+	    setOfAnagrams();
+	    
+	  }
 
 }
