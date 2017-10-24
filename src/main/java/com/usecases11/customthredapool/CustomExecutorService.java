@@ -115,7 +115,8 @@ class MyFixedThreadPoolProducer {
 		if(this.isShutDownInitiated)
 	           throw new RuntimeException("ThreadPool has been shutDown, no further tasks can be added");
 		if(workercount.get() < capacity) {
-			WorkerThreadConsumer w=new WorkerThreadConsumer(abq, this,"WorkerThread"+workercount.get());w.start();
+			WorkerThreadConsumer w=new WorkerThreadConsumer(abq, this,"WorkerThread"+workercount.get());
+			w.start();
 	    	workercount.incrementAndGet();
 	    	workers.add(w);
 	    }
