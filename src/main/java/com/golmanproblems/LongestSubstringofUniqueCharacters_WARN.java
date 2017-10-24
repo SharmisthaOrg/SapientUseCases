@@ -1,6 +1,6 @@
 package com.golmanproblems;
 
-public class LongestSubstring {
+public class LongestSubstringofUniqueCharacters_WARN {
     
     // Naive algorithm for finding the longest substring without repeating characters
     // Quadratic time complexity 
