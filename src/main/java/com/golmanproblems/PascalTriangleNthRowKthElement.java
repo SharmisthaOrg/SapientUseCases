@@ -3,8 +3,8 @@ package com.golmanproblems;
 public class PascalTriangleNthRowKthElement {
 
 	public static void main(String[] args) {
-		int n=5;
-		int k=5;
+		int n=2;
+		int k=1;
 		System.out.println(printelement(n,k));
 	}
 
@@ -13,7 +13,7 @@ public class PascalTriangleNthRowKthElement {
 			return "N/A";
 		}
 		if(pos ==1 || pos == row)return 1;
-		
+		System.out.println("--");
 		int num=fact(row);
 		int den = fact(pos)*fact(row-pos);
 		return num/den;

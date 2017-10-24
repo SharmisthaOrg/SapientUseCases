@@ -25,7 +25,7 @@ public class NthofFibonacciSeries {
 		int sum=1;
 		for(int i=0;i<=n;i++) {
 			a=sum-a;
-			System.out.println(a);
+			//System.out.println(a);
 			sum=sum+a;			
 		}
 		

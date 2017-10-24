@@ -11,7 +11,7 @@ public class PrintlargestinArray {
 	    System.out.println(printlargest(i));
 	  }
 	  private static String printlargest(Integer[] i) {
-	      Arrays.sort(i,0,i.length,
+	/*      Arrays.sort(i,0,i.length,
 	      new Comparator<Integer>(){
 	        public int compare(Integer i,Integer j){
 	          String s=""+i+j;
@@ -19,7 +19,15 @@ public class PrintlargestinArray {
 	          return s1.compareTo(s);
 	        }
 	      }
-	    );
+	    );*/
+	      Arrays.sort(i,  new Comparator<Integer>(){
+		        public int compare(Integer i,Integer j){
+			          String s=""+i+j;
+			          String s1=""+j+i;
+			          return s1.compareTo(s);
+			        }
+			      }
+			    );
 	    String r="";
 	    for(Integer s:i)
 	      r+=s;
