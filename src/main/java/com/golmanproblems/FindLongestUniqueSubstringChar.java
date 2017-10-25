@@ -3,7 +3,7 @@ package com.golmanproblems;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class FindLongestSubstringChar {
+public class FindLongestUniqueSubstringChar {
 
 	public static void main(String[] args) {
 
