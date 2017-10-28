@@ -6,6 +6,7 @@ public class PascalTriangleNthRowKthElement {
 		int n=2;
 		int k=1;
 		System.out.println(printelement(n,k));
+		System.out.println(fact(4));
 	}
 
 	private static Object printelement(int row, int pos) {
@@ -19,13 +20,19 @@ public class PascalTriangleNthRowKthElement {
 		return num/den;
 	}
 
-	private static int fact(int row) {
+	/*private static int fact(int row) {
 		int result=1;
 		 for (int i = 1; i <= row; i++) {
 	           result = result * i;
 	       }
 		
 		return result;
+	}*/
+	private static int fact(int row) {
+		if(row==1)return 1;
+		
+		return row*fact(row-1);
 	}
+	
 
 }
