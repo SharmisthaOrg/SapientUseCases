@@ -34,7 +34,9 @@ public class SortHashMapWithValuesUsingJava8 {
 		}
 		hm.forEach((i,j)->{System.out.println("key="+i+" value="+j);});
 		System.out.println("***");
-		hm.entrySet().stream().sorted((es1,es2)->es2.getValue().compareTo(es1.getValue())).forEach(System.out::println);;
+		
+		hm.entrySet().stream().sorted((es1,es2)->es2.getValue().compareTo(es1.getValue())).forEach(System.out::println);
+		hm.entrySet().stream().filter((entry)->entry.getKey().equals(10)).forEach((entry)->System.out.println(entry.getValue()+","+entry.getKey()));
 		
 		
 		

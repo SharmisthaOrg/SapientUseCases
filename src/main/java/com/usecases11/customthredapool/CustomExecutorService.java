@@ -16,12 +16,12 @@ public class CustomExecutorService {
 		es.execute(()->System.out.println("hello"));
 		es.shutdown();
 		
-		MyFixedThreadPoolProducer m=new MyFixedThreadPoolProducer(7);
+		MyFixedThreadPoolProducer m=new MyFixedThreadPoolProducer(20);
 		m.execute(new Runnable() {
 
 			@Override
 			public void run() {
-				System.err.println(Thread.currentThread().getName() +" is running for 1");
+				System.out.println(Thread.currentThread().getName() +" is running for 1");
 
 			}
 
@@ -30,7 +30,7 @@ public class CustomExecutorService {
 
 			@Override
 			public void run() {
-				System.err.println(Thread.currentThread().getName() +" is running for 2");
+				System.out.println(Thread.currentThread().getName() +" is running for 2");
 
 			}
 
@@ -39,7 +39,7 @@ public class CustomExecutorService {
 
 			@Override
 			public void run() {
-				System.err.println(Thread.currentThread().getName() +" is running for 3");
+				System.out.println(Thread.currentThread().getName() +" is running for 3");
 
 			}
 
@@ -48,7 +48,7 @@ public class CustomExecutorService {
 
 			@Override
 			public void run() {
-				System.err.println(Thread.currentThread().getName() +" is running for 4");
+				System.out.println(Thread.currentThread().getName() +" is running for 4");
 
 			}
 
@@ -57,7 +57,7 @@ public class CustomExecutorService {
 
 			@Override
 			public void run() {
-				System.err.println(Thread.currentThread().getName() +" is running for 5");
+				System.out.println(Thread.currentThread().getName() +" is running for 5");
 
 			}
 
@@ -66,7 +66,7 @@ public class CustomExecutorService {
 
 			@Override
 			public void run() {
-				System.err.println(Thread.currentThread().getName() +" is running for 6");
+				System.out.println(Thread.currentThread().getName() +" is running for 6");
 
 			}
 
@@ -75,7 +75,7 @@ public class CustomExecutorService {
 
 			@Override
 			public void run() {
-				System.err.println(Thread.currentThread().getName() +" is running for 7");
+				System.out.println(Thread.currentThread().getName() +" is running for 7");
 
 			}
 
@@ -107,6 +107,7 @@ class MyFixedThreadPoolProducer {
 		for(WorkerThreadConsumer w:workers) {
 			synchronized (w) {
 				w.interrupt();
+				System.out.println(w.getName()+" is interrupted");
 			}			
 		}
 	}
@@ -148,15 +149,17 @@ class WorkerThreadConsumer extends Thread{
 			try {
 				if(producer.shutDownInitiated() == true && abq.size() ==0 ) {
 					System.out.println("Task completed"+Thread.currentThread().getName());
-					this.interrupt();
+					//this.interrupt();
 					//Thread.sleep(1);
 					break;
-				}				
+				}	
+				System.out.println("blocked="+Thread.currentThread().getName());
 				abq.take().run();
 				//Thread.sleep(1);
 
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+				System.out.println("Thread interrupted="+Thread.currentThread().getName());
+				//e.printStackTrace();
 				break;
 				
 			}
